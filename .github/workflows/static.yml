@@ -32,16 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm' # Change to 'npm' if using npm
-      - name: Install dependencies
-        run: npm install # or npm install
-      - name: Build project
-        run: npm run build # or npm run build        
+        uses: actions/configure-pages@v5      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
