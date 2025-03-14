@@ -4,9 +4,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: '[name].js',
+        entryFileNames: 'otdr-reader/[name].js',
         chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]'
+        assetFileNames: 'otdr-reader/[name].[ext]'
       }
     }
   }
