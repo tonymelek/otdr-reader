@@ -1,0 +1,12 @@
+{
+  "name": "OTDR Reader",
+  "short_name": "OTDR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#0A2540",
+  "icons": [
+    { "src": "logo-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

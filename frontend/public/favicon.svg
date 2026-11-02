@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Meltek">
+  <rect width="64" height="64" rx="16" fill="#0A2540"/>
+  <!-- Pipeline: forward motion / flow -->
+  <path d="M12 20h18l10 12-10 12H12l10-12z" fill="#F5F7FA"/>
+  <path d="M34 20h18l10 12-10 12H34l10-12z" fill="#FF6B4A"/>
+</svg>

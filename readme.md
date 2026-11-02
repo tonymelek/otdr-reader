@@ -1,62 +1,35 @@
-# OTDR-Viewer
+# OTDR Reader
 
-This is an simple Online Viewer for SOR Files ("Standard OTDR Record"- Telcordia SR-4731, issue 2 standard). This data Format ist used to store OTDR fiber data.
-This is an ES6 Implementation of the Version from [sid5432](https://github.com/sid5432/jsOTDR).
+Browser viewer for Telcordia SR-4731 version 2 SOR files. Marketing pages live at `/`. The viewer is a Svelte app at `/app/`. The file is decoded in the browser.
 
-## Introduction
+The decoder is an ES module port of [jsOTDR](https://github.com/sid5432/jsOTDR) via [Sor-Viewer](https://github.com/moosler/Sor-Viewer).
 
-You can use this repo as browser version or node version.
-Currently only SOR files from version 2 are supported.
-
-## Example
-
-check out [live example](https://marmoo.de/coding/otdr/).
-
-## install
+## Develop
 
 ```bash
-git clone https://github.com/moosler/Sor-Viewer.git otdr
-cd otdr
-npm install
-```
-
-### start dev mode
-
-```bash
+npm install --prefix frontend
 npm run dev
 ```
 
-### start Browser Version
+- Marketing: http://localhost:5173/
+- Viewer: http://localhost:5173/app/
+
+## Build
 
 ```bash
-npm run build
-npm rund preview
+npm run build --prefix frontend
 ```
 
-### Config
+`frontend/dist` has the marketing files at the root and the app at `dist/app/` after `npm run build:pages`. Plain `npm run build` is the Vite build with base `/app/`, used for local preview and for Firebase Hosting (`frontend/firebase.json` rewrites only `/app/**`).
 
-Some Config parameters can be set.
-In the browser version the variable "config" in "main-browser.js" can be adjusted.
-In the node version the variable "config" in "node.js" can be adjusted.
-The following values can be set:
-
-- debug: false, // IF true Logging Infos are displayed to Console
-- createJson: false, //only for Node Version. If true results ar wirtten in an File called "result.js"
-- jsonPath: '.', //only for Node Version and if createJson is true. This is the path there the json file is saved
-- jsonName: 'result.json', //if createJson is true this is the name of the json File
-- devMode: false, //For Development: if true only the first 100 DataPoints are read
-- browserMode: false //BrowserMode
-
-## Questions
-
-For questions and support please mail me <moosler@gmx.de>
-
-## Knwon Issues
-
-- SOR Version 1 not supported yet
+GitHub Pages runs `npm run build:pages`, which prefixes links with the repository name.
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2025-present, Tony Melek
+
+The SOR parser in `frontend/src/lib/sor` is the port of [Sor-Viewer](https://github.com/moosler/Sor-Viewer):
+
 Copyright (c) 2019-present, Marco Moosler
-# otdr-reader

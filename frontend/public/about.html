@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOR format — OTDR Reader</title>
+    <meta
+      name="description"
+      content="What this viewer reads from a Telcordia SR-4731 version 2 SOR file, and what it leaves on your computer."
+    />
+    <meta name="theme-color" content="#0A2540" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static_style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a href="/" class="brand">
+          <img src="/favicon.svg" alt="" width="32" height="32" />
+          OTDR Reader
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about.html" class="nav-link is-active">Format</a>
+        </div>
+        <a href="/app/" class="btn btn-primary">Open viewer</a>
+        <button
+          id="menu-toggle"
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+        >
+          <svg id="hamburger-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div id="mobile-menu" class="mobile-menu">
+          <a href="/">Home</a>
+          <a href="/about.html">Format</a>
+          <a href="/app/">Open viewer</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="page">
+      <div class="wrap prose">
+        <p class="kicker" style="color: var(--sea)">Standard OTDR record</p>
+        <h1>What the viewer reads</h1>
+        <p>
+          A <abbr title="Standard OTDR Record">SOR</abbr> file is the Telcordia SR-4731 record from an optical time-domain reflectometer. Version 2 files start with a map of named blocks. This viewer seeks each block from that map.
+        </p>
+        <h2>Blocks</h2>
+        <ul>
+          <li>General parameters: language, cable and fiber identifiers, locations, operator, comments.</li>
+          <li>Supplier parameters: the instrument, module, and software that wrote the file.</li>
+          <li>Fixed parameters: date, wavelength, pulse width, range, index, and acquisition settings.</li>
+          <li>Key events and the link summary: distance, loss, reflectance.</li>
+          <li>Data points: the trace drawn on the graph.</li>
+        </ul>
+        <h2>What stays here</h2>
+        <p>
+          The file is read with the browser file API. Nothing is uploaded. Version 1 records are not supported.
+        </p>
+        <p><a href="/app/" class="btn btn-primary">Open the viewer</a></p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">OTDR Reader</p>
+          <p>A browser viewer for SOR fiber traces.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/about.html">Format</a>
+          <a href="/app/">Viewer</a>
+        </nav>
+      </div>
+      <p class="copy">The file never leaves the browser.</p>
+    </footer>
+    <script src="/site.js" defer></script>
+  </body>
+</html>
